@@ -26,6 +26,7 @@ const MongoStore = require('connect-mongo');
  //const dbUrl = 'mongodb://127.0.0.1:27017/yelp-camp'
 const mongoose = require('mongoose');
 const ejsMate = require('ejs-mate');
+const port = process.env.PORT || 3000;
 
 const userRoutes = require('./routes/users')
 const campgroundRoutes = require('./routes/campgrounds');
@@ -121,7 +122,7 @@ app.use((err,req,res,next)=>{
     res.status(statusCode).render('error',{err})
 })
 
-app.listen(3000,()=>{
+app.listen(port,()=>{
     console.log("yup I am Listening")
 })
 
